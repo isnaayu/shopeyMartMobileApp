@@ -1,0 +1,9 @@
+export default {
+  PRIMARY: "#80BCBD",
+  SOFT: "#AAD9BB",
+  MORESOFT: "#D5F0C1",
+  YELLOWSOFT: "#F9F7C9",
+  WHITESOFT: "#F9F7C9",
+  WHITE: "#FFFFFF",
+  BLACK: "#000000"
+};
