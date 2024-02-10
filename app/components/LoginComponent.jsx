@@ -21,7 +21,7 @@ const LoginComponent = () => {
         username: username,
         password: password
       })
-      // console.log(response.data.data)
+      console.log(response)
       if(response.data.statusCode === 201){
         await AsyncStorage.setItem('token', response.data.data.token)
         await AsyncStorage.setItem('role', response.data.data.role)
@@ -39,21 +39,21 @@ const LoginComponent = () => {
             },
           ]
       )
-      }else {
-        Alert.alert(
-          "Login Failed",
-          response.data.message,
-          [
-            {
-              text: "OK",
-              onPress: () => {
-                navigation.navigate("Login");
-              },
-            },
-          ])
       }
-      console.log(response.data.message)
+      console.log(response.data.data.message)
     }catch(e){
+      Alert.alert(
+        "Login Failed",
+        "Password or Username Wrong",
+        [
+          {
+            text: "OK",
+            onPress: () => {
+              navigation.navigate("Login");
+            },
+          },
+        ]
+      );
       console.log(e)
     }
   }
